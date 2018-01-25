@@ -6,18 +6,19 @@ metadata:
   name: django
 spec:
   runPolicy: Serial
-  source:
-    git:
-      ref: master
-      uri: 'https://github.com/openshift/django-ex.git'
-    type: Git
   strategy:
+    type: Source
     sourceStrategy:
       from:
         kind: ImageStreamTag
         name: 'python:3.5'
         namespace: openshift
-    type: Source
+  source:
+    git:
+      ref: master
+      uri: 'https://github.com/openshift/django-ex.git'
+    type: Git
+
   output:
     to:
       kind: ImageStreamTag
