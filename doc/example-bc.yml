@@ -18,7 +18,6 @@ spec:
       ref: master
       uri: 'https://github.com/openshift/django-ex.git'
     type: Git
-
   output:
     to:
       kind: ImageStreamTag
