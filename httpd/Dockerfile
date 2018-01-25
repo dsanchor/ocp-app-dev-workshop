@@ -8,5 +8,7 @@ RUN echo "This Web server is working." > /var/www/html/index.html
 
 EXPOSE 80
 
+USER 1001
+
 ENTRYPOINT [ "/usr/sbin/httpd" ]
 CMD [ "-D", "FOREGROUND" ]
