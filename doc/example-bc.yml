@@ -14,9 +14,9 @@ spec:
   strategy:
     sourceStrategy:
       from:
-	kind: ImageStreamTag
-	name: 'python:3.5'
-	namespace: openshift
+        kind: ImageStreamTag
+        name: 'python:3.5'
+        namespace: openshift
     type: Source
   output:
     to:
