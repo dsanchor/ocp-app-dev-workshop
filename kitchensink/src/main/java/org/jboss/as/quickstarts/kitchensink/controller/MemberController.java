@@ -51,8 +51,13 @@ public class MemberController {
 
     public void register() throws Exception {
         try {
+        	// simple test for demonstrate env variables
+        	String registrationMessage = System.getenv("REGISTRATION_MESSAGE");
+        	if (registrationMessage==null || "".equals(registrationMessage)) {
+        		registrationMessage = "Registered!";
+        	}
             memberRegistration.register(newMember);
-            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registered!", "Registration successful");
+            FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, registrationMessage, "Registration successful");
             facesContext.addMessage(null, m);
             initNewMember();
         } catch (Exception e) {
