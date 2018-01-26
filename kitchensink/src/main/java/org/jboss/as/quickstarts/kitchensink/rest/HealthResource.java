@@ -27,7 +27,7 @@ import javax.ws.rs.core.Response;
 /**
  * JAX-RS Health check resource
  */
-@Path("/members")
+@Path("/healthz")
 @RequestScoped
 public class HealthResource {
 
