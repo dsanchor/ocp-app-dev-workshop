@@ -137,6 +137,7 @@ objects:
         from:
           kind: ImageStreamTag
           name: ${APPLICATION_NAME}:${TAG}
+          namespace: ${IMAGE_STREAM_NAMESPACE}
       type: ImageChange
 - apiVersion: v1
   kind: DeploymentConfig
@@ -357,4 +358,9 @@ parameters:
   name: TAG
   required: true
   value: latest
+- description: Namespace where the Image stream resides
+  displayName: Image stream namespace
+  name: IMAGE_STREAM_NAMESPACE
+  required: true
+
 
