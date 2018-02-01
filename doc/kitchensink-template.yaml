@@ -31,7 +31,7 @@ objects:
     output:
       to:
         kind: ImageStreamTag
-        name: ${APPLICATION_NAME}:latest
+        name: ${APPLICATION_NAME}:${TAG}
     postCommit: {}
     resources: {}
     runPolicy: Serial
@@ -136,7 +136,7 @@ objects:
         - kitchensink
         from:
           kind: ImageStreamTag
-          name: ${APPLICATION_NAME}:latest
+          name: ${APPLICATION_NAME}:${TAG}
       type: ImageChange
 - apiVersion: v1
   kind: DeploymentConfig
@@ -352,4 +352,9 @@ parameters:
   name: DB_NAME
   required: true
   value: kitchensinkdb
+- description: Image stream tag that is going to be used by the container image
+  displayName: Image stream tag
+  name: TAG
+  required: true
+  value: latest
 
