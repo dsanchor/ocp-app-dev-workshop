@@ -111,7 +111,7 @@ objects:
             value: jdbc:postgresql://postgresql-${APPLICATION_NAME}:5432/${DB_NAME}
           image: ${APPLICATION_NAME}
           imagePullPolicy: Always
-          name: ${APPLICATION_NAME}
+          name: kitchensink
           ports:
           - containerPort: 8443
             protocol: TCP
@@ -189,7 +189,7 @@ objects:
             tcpSocket:
               port: 5432
             timeoutSeconds: 1
-          name: postgresql-${APPLICATION_NAME}
+          name: postgresql
           ports:
           - containerPort: 5432
             protocol: TCP
@@ -225,7 +225,7 @@ objects:
         volumes:
         - name: postgresql-data
           persistentVolumeClaim:
-            claimName: postgresql
+            claimName: postgresql-${APPLICATION_NAME}
     test: false
     triggers:
     - imageChangeParams:
